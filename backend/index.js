@@ -41,8 +41,12 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Serve frontend in production build if dist exists
-const distPath = path.join(__dirname, '..', 'dist');
+import fs from 'fs';
+
+// Serve frontend in production build if frontend/dist or dist exists
+const frontendDist = path.join(__dirname, '..', 'frontend', 'dist');
+const rootDist = path.join(__dirname, '..', 'dist');
+const distPath = fs.existsSync(frontendDist) ? frontendDist : rootDist;
 app.use(express.static(distPath));
 
 // Fallback middleware for SPA or API 404

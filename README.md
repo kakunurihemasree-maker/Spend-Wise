@@ -11,6 +11,45 @@
 
 ---
 
+## 📁 Project Structure
+
+```
+spend-wise/
+├── backend/
+│   ├── data/
+│   │   └── db.json              # Local persistent JSON database
+│   ├── routes/
+│   │   ├── accounts.js          # Multi-account & balance endpoints
+│   │   ├── analytics.js         # Financial summary, health score & exports
+│   │   ├── budgets.js           # Category spending caps & pace
+│   │   ├── goals.js             # Savings milestones & contribution
+│   │   ├── recurring.js         # Subscriptions & 1-click bill payments
+│   │   └── transactions.js      # Ledger CRUD & filtering
+│   ├── db.js                    # Atomic transactional persistence & auto-sync
+│   ├── index.js                 # Express 5 server & static SPA handler
+│   ├── package.json             # Backend dependencies (express, cors)
+│   └── seedData.js              # Initial realistic dataset
+│
+├── frontend/
+│   ├── public/                  # Favicon & vector assets
+│   ├── src/
+│   │   ├── components/          # Dashboard, Ledger, Accounts, Budgets, Goals, Modals
+│   │   ├── context/             # FinanceContext (State, Currencies, Toast alerts)
+│   │   ├── services/            # Frontend API client
+│   │   ├── App.jsx              # Main App layout & view router
+│   │   ├── index.css            # Vanilla CSS Design System with glassmorphism
+│   │   └── main.jsx             # Entry React root
+│   ├── index.html               # SPA HTML entry point
+│   ├── package.json             # Frontend dependencies (react, lucide-react, vite)
+│   └── vite.config.js           # Vite dev server with proxy to backend
+│
+├── package.json                 # Root orchestrator with concurrent scripts & workspaces
+├── .gitignore                   # Ignored files (node_modules, dist, tmp files)
+└── README.md                    # Project documentation
+```
+
+---
+
 ## 🌟 Key Features
 
 * **Executive Wealth Overview**: Real-time telemetry on Total Net Worth, Monthly Inflow, Outflow, and Net Savings Rate.
@@ -27,22 +66,7 @@
 
 ---
 
-## 🏗️ Tech Stack
-
-* **Frontend**: React 19, Vite 8, Lucide React Icons
-* **Styling**: Vanilla CSS Design System with Glassmorphism, CSS Custom Properties, and responsive flex/grid
-* **Backend**: Node.js, Express 5 REST API, CORS
-* **Database**: Atomic file-backed JSON store with transactional persistence and balance auto-synchronization
-* **Typography**: Google Fonts (Plus Jakarta Sans, Outfit, JetBrains Mono)
-
----
-
 ## 🚀 Getting Started
-
-### Prerequisites
-
-* Node.js v18+ (tested on Node.js v24)
-* npm v9+
 
 ### Installation
 
@@ -52,61 +76,46 @@ git clone https://github.com/kakunurihemasree-maker/Spend-Wise.git
 cd Spend-Wise
 ```
 
-2. Install dependencies:
+2. Install all dependencies:
 ```bash
-npm install
+npm run install:all
 ```
 
-3. Run locally (Starts both Express Backend and Vite Frontend concurrently):
+3. Run locally in development mode (starts both Backend and Frontend concurrently):
 ```bash
 npm run dev
 ```
 
-* **Frontend**: [http://localhost:5173](http://localhost:5173)
+* **Frontend App**: [http://localhost:5173](http://localhost:5173)
 * **Backend API**: [http://localhost:5000](http://localhost:5000)
 
 ---
 
-## 📦 Production Deployment
+## 🛠️ Individual Services
 
-### Option 1: Full-Stack on Render / Railway / Heroku
+* **Run Backend only**:
+  ```bash
+  cd backend
+  npm run dev
+  ```
+  *(or from root: `npm run dev:backend`)*
 
-1. Build frontend and run production server:
-```bash
-npm run build
-npm start
-```
+* **Run Frontend only**:
+  ```bash
+  cd frontend
+  npm run dev
+  ```
+  *(or from root: `npm run dev:frontend`)*
 
-2. The Express server automatically serves the compiled `dist/` static files and handles API endpoints on a single port (`process.env.PORT` or `5000`).
+* **Build Frontend for Production**:
+  ```bash
+  npm run build
+  ```
 
-### Option 2: Split Deploy (Vercel Frontend + Render/Railway Backend)
-
-* Deploy backend (`server/`) with `PORT` set by host.
-* Deploy frontend on Vercel/Netlify with `VITE_API_URL` pointing to backend host.
-
----
-
-## 📡 API Reference
-
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| `GET` | `/api/health` | Health check |
-| `GET` | `/api/analytics/summary` | Consolidated net worth, income, expenses, and health metrics |
-| `GET` | `/api/transactions` | Filter & search transactions |
-| `POST` | `/api/transactions` | Record new transaction (auto-updates account balance) |
-| `PUT` | `/api/transactions/:id` | Update existing transaction |
-| `DELETE`| `/api/transactions/:id` | Delete transaction (reverses account balance) |
-| `GET` | `/api/accounts` | Retrieve all accounts & portfolios |
-| `POST` | `/api/accounts` | Create new account |
-| `GET` | `/api/budgets` | Retrieve monthly category budgets & pace |
-| `POST` | `/api/budgets` | Set new budget cap |
-| `GET` | `/api/goals` | Retrieve savings goals & milestones |
-| `POST` | `/api/goals/:id/contribute` | Direct fund contribution to goal |
-| `GET` | `/api/recurring` | Retrieve recurring bills & subscriptions |
-| `POST` | `/api/recurring/:id/pay` | Pay bill & log transaction |
-| `GET` | `/api/analytics/export/csv` | Download transactions ledger as CSV |
-| `GET` | `/api/analytics/export/json`| Download complete database backup |
-| `POST`| `/api/analytics/reset` | Reset database to rich demo state |
+* **Start Production Server**:
+  ```bash
+  npm start
+  ```
 
 ---
 

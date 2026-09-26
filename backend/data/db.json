@@ -1,649 +1,737 @@
 {
   "settings": {
-    "currency": "USD",
+    "currency": "INR",
     "currencySymbol": "$",
-    "userName": "Alex Mercer",
-    "userEmail": "alex.mercer@spendwise.io",
+    "monthBudgetAlertThreshold": 85,
     "theme": "dark",
-    "monthBudgetAlertThreshold": 85
+    "userEmail": "alex.mercer@spendwise.io",
+    "userName": "Alex Mercer"
   },
+  "salary": [
+    {
+      "id": "sal-1790353482077-ej5",
+      "createdAt": "2026-09-25T16:24:42.077Z",
+      "incomeSource": "Software Engineer Salary",
+      "month": "2026-09",
+      "monthlySalary": 13000,
+      "notes": "Primary monthly salary",
+      "otherIncome": 2000,
+      "salaryDate": "2026-09-04"
+    }
+  ],
   "accounts": [
     {
       "id": "acc-1",
-      "name": "Main Checking",
-      "type": "checking",
-      "institution": "Chase Bank",
       "accountNumber": "•• 4821",
-      "balance": -3579.5,
+      "balance": -16244.5,
       "color": "#3B82F6",
+      "currency": "USD",
       "icon": "Wallet",
-      "currency": "USD"
+      "institution": "Chase Bank",
+      "isSynced": true,
+      "lastSyncedAt": "Today at 10:01 pm",
+      "name": "Main Checking",
+      "type": "checking"
     },
     {
       "id": "acc-2",
-      "name": "High-Yield Savings",
-      "type": "savings",
-      "institution": "Marcus by Goldman Sachs",
       "accountNumber": "•• 9104",
+      "apy": "4.50%",
       "balance": 18500,
       "color": "#10B981",
-      "icon": "PiggyBank",
       "currency": "USD",
-      "apy": "4.50%"
+      "icon": "PiggyBank",
+      "institution": "Marcus by Goldman Sachs",
+      "isSynced": true,
+      "lastSyncedAt": "Today at 10:01 pm",
+      "name": "High-Yield Savings",
+      "type": "savings"
     },
     {
       "id": "acc-3",
-      "name": "Sapphire Reserve Card",
-      "type": "credit",
-      "institution": "Chase",
       "accountNumber": "•• 3319",
-      "balance": -840.25,
-      "creditLimit": 12000,
+      "balance": -3315.6,
       "color": "#8B5CF6",
+      "creditLimit": 12000,
+      "currency": "USD",
       "icon": "CreditCard",
-      "currency": "USD"
+      "institution": "Chase",
+      "isSynced": true,
+      "lastSyncedAt": "Today at 10:01 pm",
+      "name": "Sapphire Reserve Card",
+      "type": "credit"
     },
     {
       "id": "acc-4",
-      "name": "Total Stock Index",
-      "type": "investment",
-      "institution": "Vanguard",
       "accountNumber": "•• 7720",
       "balance": 34250.75,
       "color": "#06B6D4",
+      "currency": "USD",
       "icon": "TrendingUp",
-      "currency": "USD"
+      "institution": "Vanguard",
+      "isSynced": true,
+      "lastSyncedAt": "Today at 10:01 pm",
+      "name": "Total Stock Index",
+      "type": "investment"
     },
     {
       "id": "acc-5",
-      "name": "Cash Wallet",
-      "type": "cash",
-      "institution": "Physical Currency",
       "accountNumber": "Cash",
       "balance": 350,
       "color": "#F59E0B",
+      "currency": "USD",
       "icon": "Coins",
-      "currency": "USD"
+      "institution": "Physical Currency",
+      "isSynced": true,
+      "lastSyncedAt": "Today at 10:01 pm",
+      "name": "Cash Wallet",
+      "type": "cash"
     },
     {
       "id": "acc-6",
-      "name": "Crypto Cold Vault",
-      "type": "investment",
-      "institution": "Ledger Nano",
       "accountNumber": "•• 0x9A",
       "balance": 5120.4,
       "color": "#EC4899",
+      "currency": "USD",
       "icon": "Shield",
-      "currency": "USD"
+      "institution": "Ledger Nano",
+      "isSynced": true,
+      "lastSyncedAt": "Today at 10:01 pm",
+      "name": "Crypto Cold Vault",
+      "type": "investment"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "tx-1790354899056-9kok",
+      "accountId": "acc-1",
+      "amount": 2500,
+      "category": "Housing & Rent",
+      "createdAt": "2026-09-25T16:48:19.056Z",
+      "date": "2026-09-25",
+      "merchant": "",
+      "notes": "",
+      "status": "cleared",
+      "tags": [],
+      "targetAccountId": null,
+      "title": "house rent",
+      "type": "expense"
+    },
+    {
+      "id": "tx-1790354757767-xrdu",
+      "accountId": "acc-1",
+      "amount": 2500,
+      "category": "Groceries & Food",
+      "createdAt": "2026-09-25T16:45:57.768Z",
+      "date": "2026-09-25",
+      "merchant": "",
+      "notes": "",
+      "status": "cleared",
+      "tags": [],
+      "targetAccountId": null,
+      "title": "house rent",
+      "type": "expense"
+    },
+    {
+      "id": "tx-synced-1790353881620",
+      "accountId": "acc-1",
+      "amount": 350,
+      "category": "Food",
+      "createdAt": "2026-09-25T16:31:21.620Z",
+      "date": "2026-09-25",
+      "merchant": "Starbucks / Local Cafe",
+      "notes": "Fetched via Secure Bank API Sync",
+      "status": "cleared",
+      "tags": [
+        "bank-sync",
+        "auto"
+      ],
+      "title": "Auto-Synced Bank Payment",
+      "type": "expense"
+    },
+    {
+      "id": "tx-synced-1790353874819",
+      "accountId": "acc-1",
+      "amount": 350,
+      "category": "Food",
+      "createdAt": "2026-09-25T16:31:14.819Z",
+      "date": "2026-09-25",
+      "merchant": "Starbucks / Local Cafe",
+      "notes": "Fetched via Secure Bank API Sync",
+      "status": "cleared",
+      "tags": [
+        "bank-sync",
+        "auto"
+      ],
+      "title": "Auto-Synced Bank Payment",
+      "type": "expense"
+    },
+    {
+      "id": "tx-synced-1790353867177",
+      "accountId": "acc-1",
+      "amount": 350,
+      "category": "Food",
+      "createdAt": "2026-09-25T16:31:07.177Z",
+      "date": "2026-09-25",
+      "merchant": "Starbucks / Local Cafe",
+      "notes": "Fetched via Secure Bank API Sync",
+      "status": "cleared",
+      "tags": [
+        "bank-sync",
+        "auto"
+      ],
+      "title": "Auto-Synced Bank Payment",
+      "type": "expense"
+    },
+    {
+      "id": "tx-synced-1790352320547",
+      "accountId": "acc-1",
+      "amount": 350,
+      "category": "Food",
+      "createdAt": "2026-09-25T16:05:20.547Z",
+      "date": "2026-09-25",
+      "merchant": "Starbucks / Local Cafe",
+      "notes": "Fetched via Secure Bank API Sync",
+      "status": "cleared",
+      "tags": [
+        "bank-sync",
+        "auto"
+      ],
+      "title": "Auto-Synced Bank Payment",
+      "type": "expense"
+    },
+    {
+      "id": "tx-1",
+      "accountId": "acc-1",
+      "amount": 6850,
+      "category": "Salary",
+      "date": "2026-09-01",
+      "merchant": "Apex Systems Inc",
+      "notes": "Bi-weekly direct deposit net pay",
+      "status": "cleared",
+      "tags": [
+        "salary",
+        "payroll"
+      ],
+      "title": "Senior Tech Corp Salary",
+      "type": "income"
+    },
+    {
+      "id": "tx-2",
+      "accountId": "acc-1",
+      "amount": 1800,
+      "category": "Housing & Rent",
+      "date": "2026-09-01",
+      "merchant": "Oakwood Properties",
+      "notes": "September rent for unit 402",
+      "status": "cleared",
+      "tags": [
+        "housing",
+        "rent"
+      ],
+      "title": "Apartment Rent Payment",
+      "type": "expense"
+    },
+    {
+      "id": "tx-3",
+      "accountId": "acc-3",
+      "amount": 142.6,
+      "category": "Groceries & Food",
+      "date": "2026-09-03",
+      "merchant": "Whole Foods Market",
+      "notes": "Organic produce, pantry staples",
+      "status": "cleared",
+      "tags": [
+        "food",
+        "groceries"
+      ],
+      "title": "Whole Foods Market Groceries",
+      "type": "expense"
+    },
+    {
+      "id": "tx-5",
+      "accountId": "acc-1",
+      "amount": 1000,
+      "category": "Transfer",
+      "date": "2026-09-05",
+      "merchant": "Marcus by Goldman Sachs",
+      "notes": "Automatic monthly savings goal transfer",
+      "status": "cleared",
+      "tags": [
+        "savings",
+        "transfer"
+      ],
+      "targetAccountId": "acc-2",
+      "title": "Marcus HYSA Savings Contribution",
+      "type": "transfer"
+    },
+    {
+      "id": "tx-7",
+      "accountId": "acc-1",
+      "amount": 1750,
+      "category": "Freelance",
+      "date": "2026-09-08",
+      "merchant": "Starlight Media LLC",
+      "notes": "Milestone 2 design tokens delivery",
+      "status": "cleared",
+      "tags": [
+        "freelance",
+        "design"
+      ],
+      "title": "Freelance UI/UX System Design",
+      "type": "income"
+    },
+    {
+      "id": "tx-8",
+      "accountId": "acc-3",
+      "amount": 92.15,
+      "category": "Groceries & Food",
+      "date": "2026-09-10",
+      "merchant": "Trader Joe's",
+      "notes": "Snacks, frozen meals, Greek yogurt",
+      "status": "cleared",
+      "tags": [
+        "groceries"
+      ],
+      "title": "Trader Joe's Weekly Run",
+      "type": "expense"
+    },
+    {
+      "id": "tx-9",
+      "accountId": "acc-1",
+      "amount": 75,
+      "category": "Utilities & Bills",
+      "date": "2026-09-11",
+      "merchant": "Sonic Fiber",
+      "notes": "1Gbps symmetric fiber internet",
+      "status": "cleared",
+      "tags": [
+        "utilities",
+        "internet"
+      ],
+      "title": "Sonic Fiber Internet Bill",
+      "type": "expense"
+    },
+    {
+      "id": "tx-11",
+      "accountId": "acc-4",
+      "amount": 215.3,
+      "category": "Investments",
+      "date": "2026-09-14",
+      "merchant": "Vanguard Group",
+      "notes": "Quarterly dividend reinvestment",
+      "status": "cleared",
+      "tags": [
+        "investing",
+        "dividends"
+      ],
+      "title": "Vanguard S&P 500 Dividend",
+      "type": "income"
+    },
+    {
+      "id": "tx-13",
+      "accountId": "acc-1",
+      "amount": 6850,
+      "category": "Salary",
+      "date": "2026-09-15",
+      "merchant": "Apex Systems Inc",
+      "notes": "Mid-month bi-weekly pay",
+      "status": "cleared",
+      "tags": [
+        "salary",
+        "payroll"
+      ],
+      "title": "Senior Tech Corp Salary",
+      "type": "income"
+    },
+    {
+      "id": "tx-16",
+      "accountId": "acc-1",
+      "amount": 112.5,
+      "category": "Utilities & Bills",
+      "date": "2026-09-19",
+      "merchant": "Pacific Gas & Electric",
+      "notes": "Monthly utility usage statement",
+      "status": "cleared",
+      "tags": [
+        "utilities",
+        "power"
+      ],
+      "title": "Electricity & Gas Bill",
+      "type": "expense"
+    },
+    {
+      "id": "tx-18",
+      "accountId": "acc-5",
+      "amount": 45,
+      "category": "Groceries & Food",
+      "date": "2026-09-21",
+      "merchant": "Ferry Building Market",
+      "notes": "Heirloom tomatoes, artisanal sourdough, honey",
+      "status": "cleared",
+      "tags": [
+        "cash",
+        "groceries"
+      ],
+      "title": "Farmer's Market Fresh Produce",
+      "type": "expense"
+    },
+    {
+      "id": "tx-21",
+      "accountId": "acc-1",
+      "amount": 800,
+      "category": "Transfer",
+      "date": "2026-09-24",
+      "merchant": "Vanguard",
+      "notes": "Dollar-cost averaging into VOO index",
+      "status": "cleared",
+      "tags": [
+        "investing",
+        "dca"
+      ],
+      "targetAccountId": "acc-4",
+      "title": "Vanguard ETF Investment Buy",
+      "type": "transfer"
+    },
+    {
+      "id": "tx-1790412541685-3m59",
+      "accountId": "acc-1",
+      "amount": 850,
+      "category": "Traveling Expenses",
+      "createdAt": "2026-09-26T08:49:01.685Z",
+      "date": "2026-09-22",
+      "merchant": "Uber / Metro Pass",
+      "notes": "Monthly travel pass and rides",
+      "status": "cleared",
+      "tags": [
+        "commute",
+        "travel"
+      ],
+      "targetAccountId": null,
+      "title": "Metro Commute & City Cab Rides",
+      "type": "expense"
+    },
+    {
+      "id": "tx-1790412541671-3ypm",
+      "accountId": "acc-1",
+      "amount": 2400,
+      "category": "Traveling Expenses",
+      "createdAt": "2026-09-26T08:49:01.671Z",
+      "date": "2026-09-14",
+      "merchant": "MakeMyTrip / IRCTC",
+      "notes": "Scenic resort stay and tickets",
+      "status": "cleared",
+      "tags": [
+        "travel",
+        "holiday",
+        "vacation"
+      ],
+      "targetAccountId": null,
+      "title": "Weekend Vacation & Resort Booking",
+      "type": "expense"
+    },
+    {
+      "id": "tx-1790412541654-x8g1",
+      "accountId": "acc-1",
+      "amount": 4200,
+      "category": "EMI",
+      "createdAt": "2026-09-26T08:49:01.654Z",
+      "date": "2026-09-05",
+      "merchant": "HDFC Bank Loans",
+      "notes": "Monthly fixed loan EMI installment",
+      "status": "cleared",
+      "tags": [
+        "emi",
+        "loan",
+        "fixed-bills"
+      ],
+      "targetAccountId": null,
+      "title": "HDFC Home & Vehicle Loan EMI Auto-debit",
+      "type": "expense"
+    },
+    {
+      "id": "tx-1790412541636-qk4y",
+      "accountId": "acc-1",
+      "amount": 5000,
+      "category": "Gold",
+      "createdAt": "2026-09-26T08:49:01.636Z",
+      "date": "2026-09-08",
+      "merchant": "Tanishq / MMTC-PAMP",
+      "notes": "Monthly gold accumulation",
+      "status": "cleared",
+      "tags": [
+        "gold",
+        "investment",
+        "wealth"
+      ],
+      "targetAccountId": null,
+      "title": "Tanishq Digital Gold Investment SIP",
+      "type": "expense"
+    },
+    {
+      "id": "tx-1790412541618-47r4",
+      "accountId": "acc-1",
+      "amount": 1450,
+      "category": "Shopping",
+      "createdAt": "2026-09-26T08:49:01.618Z",
+      "date": "2026-09-20",
+      "merchant": "Amazon India",
+      "notes": "Wireless earbuds and accessories",
+      "status": "cleared",
+      "tags": [
+        "electronics",
+        "shopping"
+      ],
+      "targetAccountId": null,
+      "title": "Electronics & Smart Gadgets",
+      "type": "expense"
+    },
+    {
+      "id": "tx-1790412541599-gfit",
+      "accountId": "acc-3",
+      "amount": 3200,
+      "category": "Shopping",
+      "createdAt": "2026-09-26T08:49:01.599Z",
+      "date": "2026-09-12",
+      "merchant": "Zara / Myntra",
+      "notes": "Festive wardrobe collection",
+      "status": "cleared",
+      "tags": [
+        "fashion",
+        "shopping"
+      ],
+      "targetAccountId": null,
+      "title": "Autumn Fashion & Festive Shopping",
+      "type": "expense"
+    },
+    {
+      "id": "tx-1790413139416-jd1x",
+      "accountId": "acc-1",
+      "amount": 2500,
+      "category": "Groceries & Food",
+      "createdAt": "2026-09-26T08:58:59.416Z",
+      "date": "2026-09-26",
+      "merchant": "",
+      "notes": "",
+      "status": "cleared",
+      "tags": [],
+      "targetAccountId": null,
+      "title": "house rent",
+      "type": "expense"
     }
   ],
   "budgets": [
     {
       "id": "bud-1",
       "category": "Housing & Rent",
-      "limit": 1800,
       "color": "#6366F1",
+      "limit": 1800,
       "period": "monthly"
     },
     {
       "id": "bud-2",
       "category": "Groceries & Food",
-      "limit": 650,
       "color": "#10B981",
-      "period": "monthly"
-    },
-    {
-      "id": "bud-3",
-      "category": "Dining & Drinks",
-      "limit": 450,
-      "color": "#F59E0B",
-      "period": "monthly"
-    },
-    {
-      "id": "bud-4",
-      "category": "Entertainment & Tech",
-      "limit": 250,
-      "color": "#EC4899",
-      "period": "monthly"
-    },
-    {
-      "id": "bud-5",
-      "category": "Transportation",
-      "limit": 300,
-      "color": "#3B82F6",
+      "limit": 650,
       "period": "monthly"
     },
     {
       "id": "bud-6",
       "category": "Utilities & Bills",
-      "limit": 350,
       "color": "#8B5CF6",
-      "period": "monthly"
-    },
-    {
-      "id": "bud-7",
-      "category": "Health & Fitness",
-      "limit": 200,
-      "color": "#14B8A6",
-      "period": "monthly"
-    },
-    {
-      "id": "bud-8",
-      "category": "Shopping & Apparel",
       "limit": 350,
-      "color": "#F43F5E",
+      "period": "monthly"
+    },
+    {
+      "id": "bud-1790412541536-8m9",
+      "category": "Shopping",
+      "color": "#EC4899",
+      "limit": 5000,
+      "period": "monthly"
+    },
+    {
+      "id": "bud-1790412541561-l3i",
+      "category": "Gold",
+      "color": "#FACC15",
+      "limit": 6000,
+      "period": "monthly"
+    },
+    {
+      "id": "bud-1790412541573-tho",
+      "category": "EMI",
+      "color": "#A855F7",
+      "limit": 4500,
+      "period": "monthly"
+    },
+    {
+      "id": "bud-1790412541587-86q",
+      "category": "Traveling Expenses",
+      "color": "#4ADE80",
+      "limit": 3500,
       "period": "monthly"
     }
   ],
   "goals": [
     {
       "id": "goal-1",
-      "name": "Emergency Reserve (6 Mos)",
-      "targetAmount": 25000,
-      "currentAmount": 18500,
-      "deadline": "2026-12-31",
       "category": "Emergency",
       "color": "#10B981",
+      "currentAmount": 18500,
+      "deadline": "2026-12-31",
       "icon": "ShieldCheck",
-      "notes": "Dedicated liquid safety net in Marcus HYSA"
+      "name": "Emergency Reserve (6 Mos)",
+      "notes": "Dedicated liquid safety net in Marcus HYSA",
+      "targetAmount": 25000
     },
     {
       "id": "goal-2",
-      "name": "Kyoto & Tokyo Vacation",
-      "targetAmount": 5500,
-      "currentAmount": 3850,
-      "deadline": "2026-11-20",
       "category": "Travel",
       "color": "#EC4899",
+      "currentAmount": 3850,
+      "deadline": "2026-11-20",
       "icon": "Plane",
-      "notes": "Flights, traditional Ryokan stays, bullet train pass"
+      "name": "Kyoto & Tokyo Vacation",
+      "notes": "Flights, traditional Ryokan stays, bullet train pass",
+      "targetAmount": 5500
     },
     {
       "id": "goal-3",
-      "name": "MacBook Pro M4 Max",
-      "targetAmount": 3200,
-      "currentAmount": 2450,
-      "deadline": "2026-10-31",
       "category": "Tech",
       "color": "#8B5CF6",
+      "currentAmount": 2450,
+      "deadline": "2026-10-31",
       "icon": "Laptop",
-      "notes": "Upgrade for software engineering and creative work"
+      "name": "MacBook Pro M4 Max",
+      "notes": "Upgrade for software engineering and creative work",
+      "targetAmount": 3200
     },
     {
       "id": "goal-4",
-      "name": "EV Downpayment",
-      "targetAmount": 12000,
-      "currentAmount": 6800,
-      "deadline": "2027-04-15",
       "category": "Vehicle",
       "color": "#3B82F6",
+      "currentAmount": 6800,
+      "deadline": "2027-04-15",
       "icon": "Car",
-      "notes": "Electric vehicle savings fund"
+      "name": "EV Downpayment",
+      "notes": "Electric vehicle savings fund",
+      "targetAmount": 12000
     }
   ],
   "recurring": [
     {
       "id": "rec-1",
-      "name": "Apartment Rent",
-      "amount": 1800,
-      "billingCycle": "monthly",
-      "nextDueDate": "2026-10-01",
-      "category": "Housing & Rent",
       "accountId": "acc-1",
-      "status": "active",
-      "autoPay": true
-    },
-    {
-      "id": "rec-2",
-      "name": "Netflix Premium Ultra HD",
-      "amount": 22.99,
+      "amount": 1800,
+      "autoPay": true,
       "billingCycle": "monthly",
-      "nextDueDate": "2026-10-03",
-      "category": "Entertainment & Tech",
-      "accountId": "acc-3",
-      "status": "active",
-      "autoPay": true
-    },
-    {
-      "id": "rec-3",
-      "name": "Spotify Duo",
-      "amount": 14.99,
-      "billingCycle": "monthly",
-      "nextDueDate": "2026-10-06",
-      "category": "Entertainment & Tech",
-      "accountId": "acc-3",
-      "status": "active",
-      "autoPay": true
+      "category": "Housing & Rent",
+      "name": "Apartment Rent",
+      "nextDueDate": "2026-10-01",
+      "status": "active"
     },
     {
       "id": "rec-4",
-      "name": "Sonic Fiber Gigabit",
+      "accountId": "acc-1",
       "amount": 75,
+      "autoPay": true,
       "billingCycle": "monthly",
-      "nextDueDate": "2026-10-09",
       "category": "Utilities & Bills",
-      "accountId": "acc-1",
-      "status": "active",
-      "autoPay": true
-    },
-    {
-      "id": "rec-5",
-      "name": "Equinox Fitness Club",
-      "amount": 135,
-      "billingCycle": "monthly",
-      "nextDueDate": "2026-10-15",
-      "category": "Health & Fitness",
-      "accountId": "acc-1",
-      "status": "active",
-      "autoPay": false
-    },
-    {
-      "id": "rec-6",
-      "name": "Claude Pro & OpenAI API",
-      "amount": 45,
-      "billingCycle": "monthly",
-      "nextDueDate": "2026-10-18",
-      "category": "Entertainment & Tech",
-      "accountId": "acc-3",
-      "status": "active",
-      "autoPay": true
-    },
-    {
-      "id": "rec-7",
-      "name": "Amazon Prime Annual",
-      "amount": 139,
-      "billingCycle": "yearly",
-      "nextDueDate": "2026-11-25",
-      "category": "Shopping & Apparel",
-      "accountId": "acc-3",
-      "status": "active",
-      "autoPay": true
+      "name": "Sonic Fiber Gigabit",
+      "nextDueDate": "2026-10-09",
+      "status": "active"
     }
   ],
-  "transactions": [
+  "notifications": [
     {
-      "title": "Hema",
-      "amount": 10000,
-      "type": "expense",
-      "category": "Housing & Rent",
-      "accountId": "acc-1",
-      "targetAccountId": null,
-      "date": "2026-09-25",
-      "merchant": "",
-      "notes": "",
-      "tags": [],
-      "status": "cleared",
-      "id": "tx-1790315205507-hb87",
-      "createdAt": "2026-09-25T05:46:45.508Z"
+      "id": "notif-1790353881620",
+      "createdAt": "2026-09-25T16:31:21.620Z",
+      "isRead": false,
+      "message": "Bank transactions refreshed successfully. 1 new transaction imported from Main Checking.",
+      "month": "2026-09",
+      "title": "Bank Accounts Synced",
+      "type": "bank_sync"
     },
     {
-      "id": "tx-1",
-      "title": "Senior Tech Corp Salary",
-      "amount": 6850,
-      "type": "income",
-      "category": "Salary",
-      "accountId": "acc-1",
-      "date": "2026-09-01",
-      "merchant": "Apex Systems Inc",
-      "notes": "Bi-weekly direct deposit net pay",
-      "tags": [
-        "salary",
-        "payroll"
-      ],
-      "status": "cleared"
+      "id": "notif-1790353874819",
+      "createdAt": "2026-09-25T16:31:14.819Z",
+      "isRead": false,
+      "message": "Bank transactions refreshed successfully. 1 new transaction imported from Main Checking.",
+      "month": "2026-09",
+      "title": "Bank Accounts Synced",
+      "type": "bank_sync"
     },
     {
-      "id": "tx-2",
-      "title": "Apartment Rent Payment",
-      "amount": 1800,
-      "type": "expense",
-      "category": "Housing & Rent",
-      "accountId": "acc-1",
-      "date": "2026-09-01",
-      "merchant": "Oakwood Properties",
-      "notes": "September rent for unit 402",
-      "tags": [
-        "housing",
-        "rent"
-      ],
-      "status": "cleared"
+      "id": "notif-1790353867177",
+      "createdAt": "2026-09-25T16:31:07.177Z",
+      "isRead": false,
+      "message": "Bank transactions refreshed successfully. 1 new transaction imported from Main Checking.",
+      "month": "2026-09",
+      "title": "Bank Accounts Synced",
+      "type": "bank_sync"
     },
     {
-      "id": "tx-3",
-      "title": "Whole Foods Market Groceries",
-      "amount": 142.6,
-      "type": "expense",
-      "category": "Groceries & Food",
-      "accountId": "acc-3",
-      "date": "2026-09-03",
-      "merchant": "Whole Foods Market",
-      "notes": "Organic produce, pantry staples",
-      "tags": [
-        "food",
-        "groceries"
-      ],
-      "status": "cleared"
+      "id": "notif-1790352320548",
+      "createdAt": "2026-09-25T16:05:20.548Z",
+      "isRead": false,
+      "message": "Bank transactions refreshed successfully. 1 new transaction imported from Main Checking.",
+      "month": "2026-09",
+      "title": "Bank Accounts Synced",
+      "type": "bank_sync"
     },
     {
-      "id": "tx-4",
-      "title": "Blue Bottle Specialty Coffee",
-      "amount": 14.5,
-      "type": "expense",
-      "category": "Dining & Drinks",
-      "accountId": "acc-3",
-      "date": "2026-09-04",
-      "merchant": "Blue Bottle Coffee",
-      "notes": "Cold brew and almond croissant",
-      "tags": [
-        "coffee",
-        "cafes"
-      ],
-      "status": "cleared"
+      "id": "notif-1",
+      "createdAt": "2026-09-24T14:30:00Z",
+      "isRead": false,
+      "message": "Your actual expenditure for Food (₹4,000) is close to your planned limit of ₹4,500 (88.8% used).",
+      "month": "2026-09",
+      "title": "Planned Expenditure Alert",
+      "type": "budget_alert"
     },
     {
-      "id": "tx-5",
-      "title": "Marcus HYSA Savings Contribution",
-      "amount": 1000,
-      "type": "transfer",
-      "category": "Transfer",
-      "accountId": "acc-1",
-      "targetAccountId": "acc-2",
-      "date": "2026-09-05",
-      "merchant": "Marcus by Goldman Sachs",
-      "notes": "Automatic monthly savings goal transfer",
-      "tags": [
-        "savings",
-        "transfer"
-      ],
-      "status": "cleared"
+      "id": "notif-2",
+      "createdAt": "2026-09-01T09:00:00Z",
+      "isRead": true,
+      "message": "Monthly salary of ₹25,000 credited to HDFC Bank account on Sept 01, 2026.",
+      "month": "2026-09",
+      "title": "Salary Credited",
+      "type": "salary_credit"
     },
     {
-      "id": "tx-6",
-      "title": "Chevron Fuel Station",
-      "amount": 58.4,
-      "type": "expense",
-      "category": "Transportation",
-      "accountId": "acc-3",
-      "date": "2026-09-06",
-      "merchant": "Chevron",
-      "notes": "Full tank premium fuel",
-      "tags": [
-        "transit",
-        "gas"
-      ],
-      "status": "cleared"
+      "id": "notif-3",
+      "createdAt": "2026-09-25T20:30:00Z",
+      "isRead": true,
+      "message": "HDFC Bank & SBI Savings accounts successfully synced with 6 new transactions.",
+      "month": "2026-09",
+      "title": "Bank Account Synced",
+      "type": "bank_sync"
     },
     {
-      "id": "tx-7",
-      "title": "Freelance UI/UX System Design",
-      "amount": 1750,
-      "type": "income",
-      "category": "Freelance",
-      "accountId": "acc-1",
-      "date": "2026-09-08",
-      "merchant": "Starlight Media LLC",
-      "notes": "Milestone 2 design tokens delivery",
-      "tags": [
-        "freelance",
-        "design"
-      ],
-      "status": "cleared"
+      "id": "notif-1790404756137-Groceries & Food",
+      "createdAt": "2026-09-26T06:39:16.137Z",
+      "isRead": false,
+      "message": "Your actual expenditure for Groceries & Food (₹2,779.75) has crossed your planned budget limit of ₹650 by ₹2,129.75.",
+      "month": "2026-09",
+      "title": "⚠️ Groceries & Food Budget Limit Exceeded",
+      "type": "cat_exceeded_Groceries & Food"
     },
     {
-      "id": "tx-8",
-      "title": "Trader Joe's Weekly Run",
-      "amount": 92.15,
-      "type": "expense",
-      "category": "Groceries & Food",
-      "accountId": "acc-3",
-      "date": "2026-09-10",
-      "merchant": "Trader Joe's",
-      "notes": "Snacks, frozen meals, Greek yogurt",
-      "tags": [
-        "groceries"
-      ],
-      "status": "cleared"
+      "id": "notif-1790404756137-Housing & Rent",
+      "createdAt": "2026-09-26T06:39:16.137Z",
+      "isRead": false,
+      "message": "Your actual expenditure for Housing & Rent (₹4,300) has crossed your planned budget limit of ₹1,800 by ₹2,500.",
+      "month": "2026-09",
+      "title": "⚠️ Housing & Rent Budget Limit Exceeded",
+      "type": "cat_exceeded_Housing & Rent"
     },
     {
-      "id": "tx-9",
-      "title": "Sonic Fiber Internet Bill",
-      "amount": 75,
-      "type": "expense",
-      "category": "Utilities & Bills",
-      "accountId": "acc-1",
-      "date": "2026-09-11",
-      "merchant": "Sonic Fiber",
-      "notes": "1Gbps symmetric fiber internet",
-      "tags": [
-        "utilities",
-        "internet"
-      ],
-      "status": "cleared"
-    },
-    {
-      "id": "tx-10",
-      "title": "Omakase Sushi Dinner",
-      "amount": 195.8,
-      "type": "expense",
-      "category": "Dining & Drinks",
-      "accountId": "acc-3",
-      "date": "2026-09-12",
-      "merchant": "Sushi Yoshizumi",
-      "notes": "Weekend anniversary celebration dinner",
-      "tags": [
-        "dining",
-        "restaurant"
-      ],
-      "status": "cleared"
-    },
-    {
-      "id": "tx-11",
-      "title": "Vanguard S&P 500 Dividend",
-      "amount": 215.3,
-      "type": "income",
-      "category": "Investments",
-      "accountId": "acc-4",
-      "date": "2026-09-14",
-      "merchant": "Vanguard Group",
-      "notes": "Quarterly dividend reinvestment",
-      "tags": [
-        "investing",
-        "dividends"
-      ],
-      "status": "cleared"
-    },
-    {
-      "id": "tx-12",
-      "title": "Equinox Gym Monthly Dues",
-      "amount": 135,
-      "type": "expense",
-      "category": "Health & Fitness",
-      "accountId": "acc-1",
-      "date": "2026-09-15",
-      "merchant": "Equinox Clubs",
-      "notes": "Membership fee and locker access",
-      "tags": [
-        "fitness",
-        "gym"
-      ],
-      "status": "cleared"
-    },
-    {
-      "id": "tx-13",
-      "title": "Senior Tech Corp Salary",
-      "amount": 6850,
-      "type": "income",
-      "category": "Salary",
-      "accountId": "acc-1",
-      "date": "2026-09-15",
-      "merchant": "Apex Systems Inc",
-      "notes": "Mid-month bi-weekly pay",
-      "tags": [
-        "salary",
-        "payroll"
-      ],
-      "status": "cleared"
-    },
-    {
-      "id": "tx-14",
-      "title": "Steam Games Autumn Sale",
-      "amount": 68.2,
-      "type": "expense",
-      "category": "Entertainment & Tech",
-      "accountId": "acc-3",
-      "date": "2026-09-16",
-      "merchant": "Valve Software",
-      "notes": "Indie games and DLC bundle",
-      "tags": [
-        "gaming",
-        "entertainment"
-      ],
-      "status": "cleared"
-    },
-    {
-      "id": "tx-15",
-      "title": "Uniqlo Autumn Wardrobe",
-      "amount": 165.4,
-      "type": "expense",
-      "category": "Shopping & Apparel",
-      "accountId": "acc-3",
-      "date": "2026-09-18",
-      "merchant": "Uniqlo Fifth Ave",
-      "notes": "Merino wool knitwear and trench jacket",
-      "tags": [
-        "clothing",
-        "shopping"
-      ],
-      "status": "cleared"
-    },
-    {
-      "id": "tx-16",
-      "title": "Electricity & Gas Bill",
-      "amount": 112.5,
-      "type": "expense",
-      "category": "Utilities & Bills",
-      "accountId": "acc-1",
-      "date": "2026-09-19",
-      "merchant": "Pacific Gas & Electric",
-      "notes": "Monthly utility usage statement",
-      "tags": [
-        "utilities",
-        "power"
-      ],
-      "status": "cleared"
-    },
-    {
-      "id": "tx-17",
-      "title": "Uber City Rides",
-      "amount": 42.75,
-      "type": "expense",
-      "category": "Transportation",
-      "accountId": "acc-3",
-      "date": "2026-09-20",
-      "merchant": "Uber Technologies",
-      "notes": "Late night ride back from airport",
-      "tags": [
-        "uber",
-        "transit"
-      ],
-      "status": "cleared"
-    },
-    {
-      "id": "tx-18",
-      "title": "Farmer's Market Fresh Produce",
-      "amount": 45,
-      "type": "expense",
-      "category": "Groceries & Food",
-      "accountId": "acc-5",
-      "date": "2026-09-21",
-      "merchant": "Ferry Building Market",
-      "notes": "Heirloom tomatoes, artisanal sourdough, honey",
-      "tags": [
-        "cash",
-        "groceries"
-      ],
-      "status": "cleared"
-    },
-    {
-      "id": "tx-19",
-      "title": "Claude Pro & OpenAI API",
-      "amount": 45,
-      "type": "expense",
-      "category": "Entertainment & Tech",
-      "accountId": "acc-3",
-      "date": "2026-09-22",
-      "merchant": "Anthropic / OpenAI",
-      "notes": "Monthly AI dev tools subscription",
-      "tags": [
-        "ai",
-        "subscriptions"
-      ],
-      "status": "cleared"
-    },
-    {
-      "id": "tx-20",
-      "title": "Artisanal Pizzeria with Friends",
-      "amount": 68.5,
-      "type": "expense",
-      "category": "Dining & Drinks",
-      "accountId": "acc-3",
-      "date": "2026-09-23",
-      "merchant": "Tony's Pizza Napoletana",
-      "notes": "Dinner split with team",
-      "tags": [
-        "dining",
-        "social"
-      ],
-      "status": "cleared"
-    },
-    {
-      "id": "tx-21",
-      "title": "Vanguard ETF Investment Buy",
-      "amount": 800,
-      "type": "transfer",
-      "category": "Transfer",
-      "accountId": "acc-1",
-      "targetAccountId": "acc-4",
-      "date": "2026-09-24",
-      "merchant": "Vanguard",
-      "notes": "Dollar-cost averaging into VOO index",
-      "tags": [
-        "investing",
-        "dca"
-      ],
-      "status": "cleared"
-    },
-    {
-      "id": "tx-22",
-      "title": "CVS Pharmacy & Vitamins",
-      "amount": 32.1,
-      "type": "expense",
-      "category": "Health & Fitness",
-      "accountId": "acc-3",
-      "date": "2026-09-24",
-      "merchant": "CVS Health",
-      "notes": "Supplements and allergy meds",
-      "tags": [
-        "wellness",
-        "health"
-      ],
-      "status": "cleared"
-    },
-    {
-      "id": "tx-23",
-      "title": "Subway Metro Card Pass",
-      "amount": 34,
-      "type": "expense",
-      "category": "Transportation",
-      "accountId": "acc-3",
-      "date": "2026-09-25",
-      "merchant": "MTA MetroCard",
-      "notes": "Weekly transit refill pass",
-      "tags": [
-        "metro",
-        "commute"
-      ],
-      "status": "pending"
+      "id": "notif-1790404756134-plan",
+      "createdAt": "2026-09-26T06:39:16.134Z",
+      "isRead": false,
+      "message": "Your planned expenditure for 2026-09 was ₹4,350. Your actual expenditure has reached ₹9,526.9, exceeding your plan by ₹5,176.9.",
+      "month": "2026-09",
+      "title": "⚠️ Expenditure Plan Exceeded!",
+      "type": "plan_exceeded_total"
     }
-  ]
+  ],
+  "users": []
 }

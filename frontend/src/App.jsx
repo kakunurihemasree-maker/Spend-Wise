@@ -3,10 +3,15 @@ import { FinanceProvider, useFinance } from './context/FinanceContext.jsx';
 import Sidebar from './components/Sidebar.jsx';
 import Navbar from './components/Navbar.jsx';
 import DashboardOverview from './components/DashboardOverview.jsx';
+import IncomeView from './components/IncomeView.jsx';
+import ExpensesView from './components/ExpensesView.jsx';
 import TransactionList from './components/TransactionList.jsx';
 import AccountsView from './components/AccountsView.jsx';
 import BudgetTracker from './components/BudgetTracker.jsx';
 import SavingsGoals from './components/SavingsGoals.jsx';
+import ReportsView from './components/ReportsView.jsx';
+import CalendarView from './components/CalendarView.jsx';
+import NotificationsView from './components/NotificationsView.jsx';
 import RecurringBills from './components/RecurringBills.jsx';
 import AnalyticsCharts from './components/AnalyticsCharts.jsx';
 import SettingsView from './components/SettingsView.jsx';
@@ -17,6 +22,8 @@ import AccountModal from './components/AccountModal.jsx';
 import GoalModal from './components/GoalModal.jsx';
 import ContributeModal from './components/ContributeModal.jsx';
 import RecurringModal from './components/RecurringModal.jsx';
+import SalaryModal from './components/SalaryModal.jsx';
+import AuthModal from './components/AuthModal.jsx';
 import Toast from './components/Toast.jsx';
 
 function MainApp() {
@@ -26,6 +33,10 @@ function MainApp() {
     switch (activeTab) {
       case 'dashboard':
         return <DashboardOverview />;
+      case 'income':
+        return <IncomeView />;
+      case 'expenses':
+        return <ExpensesView />;
       case 'transactions':
         return <TransactionList />;
       case 'accounts':
@@ -34,6 +45,12 @@ function MainApp() {
         return <BudgetTracker />;
       case 'goals':
         return <SavingsGoals />;
+      case 'reports':
+        return <ReportsView />;
+      case 'calendar':
+        return <CalendarView />;
+      case 'notifications':
+        return <NotificationsView />;
       case 'recurring':
         return <RecurringBills />;
       case 'analytics':
@@ -71,6 +88,8 @@ function MainApp() {
       <GoalModal />
       <ContributeModal />
       <RecurringModal />
+      <SalaryModal />
+      <AuthModal />
 
       {/* Toast notifications */}
       <Toast />

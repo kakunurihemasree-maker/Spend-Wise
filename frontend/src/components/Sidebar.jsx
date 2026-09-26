@@ -1,18 +1,22 @@
 import React from 'react';
 import {
   LayoutDashboard,
+  TrendingUp,
+  TrendingDown,
   Receipt,
-  WalletCards,
+  BarChart3,
   PieChart,
   Target,
-  CalendarClock,
-  BarChart3,
+  FileText,
+  CalendarDays,
+  Bell,
   Settings,
-  Sparkles,
   RotateCcw,
-  X
+  X,
+  CreditCard
 } from 'lucide-react';
 import { useFinance } from '../context/FinanceContext.jsx';
+import BrandLogo from './BrandLogo.jsx';
 
 export default function Sidebar() {
   const {
@@ -23,20 +27,23 @@ export default function Sidebar() {
     transactions,
     budgets,
     goals,
-    recurring,
-    settings,
+    unreadNotifCount,
     resetDemo
   } = useFinance();
 
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+    { id: 'income', label: 'Income & Salary', icon: TrendingUp, color: '#10B981' },
+    { id: 'expenses', label: 'Expenses', icon: TrendingDown, color: '#EF4444' },
     { id: 'transactions', label: 'Transactions', icon: Receipt, badge: transactions.length },
-    { id: 'accounts', label: 'Accounts & Cards', icon: WalletCards },
+    { id: 'accounts', label: 'Bank Accounts', icon: CreditCard },
+    { id: 'analytics', label: 'Analytics', icon: BarChart3 },
     { id: 'budgets', label: 'Budgets & Limits', icon: PieChart, badge: budgets.length },
     { id: 'goals', label: 'Savings Goals', icon: Target, badge: goals.length },
-    { id: 'recurring', label: 'Bills & Subscriptions', icon: CalendarClock, badge: recurring.filter(r => r.status === 'active').length },
-    { id: 'analytics', label: 'Analytics & Insights', icon: BarChart3 },
-    { id: 'settings', label: 'Settings & Backup', icon: Settings },
+    { id: 'reports', label: 'Reports (PDF/CSV)', icon: FileText },
+    { id: 'calendar', label: 'Financial Calendar', icon: CalendarDays },
+    { id: 'notifications', label: 'Notifications', icon: Bell, badge: unreadNotifCount > 0 ? unreadNotifCount : undefined },
+    { id: 'settings', label: 'Profile & Settings', icon: Settings }
   ];
 
   const handleNavClick = (tabId) => {
@@ -56,14 +63,8 @@ export default function Sidebar() {
       )}
 
       <aside className={`sidebar ${isMobileNavOpen ? 'mobile-open' : ''}`}>
-        <div className="sidebar-header">
-          <div className="logo-icon-wrap">
-            <Sparkles size={22} />
-          </div>
-          <div className="brand-text">
-            <span className="brand-name">SpendWise</span>
-            <span className="brand-tag">Intelligent Wealth</span>
-          </div>
+        <div className="sidebar-header" style={{ padding: '1.25rem 1.5rem 1rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <BrandLogo size="medium" showTagline={true} />
           {isMobileNavOpen && (
             <button 
               className="btn-icon" 
@@ -75,8 +76,10 @@ export default function Sidebar() {
           )}
         </div>
 
-        <nav className="sidebar-nav">
-          <div className="nav-section-label">Finance Hub</div>
+        <nav className="sidebar-nav" style={{ padding: '0 0.75rem' }}>
+          <div className="nav-section-label" style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)', margin: '0.5rem 0.75rem' }}>
+            Main Navigation
+          </div>
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeTab === item.id;
@@ -86,39 +89,28 @@ export default function Sidebar() {
                 id={`nav-${item.id}`}
                 className={`nav-item ${isActive ? 'active' : ''}`}
                 onClick={() => handleNavClick(item.id)}
+                style={{ borderRadius: '10px', padding: '0.65rem 0.85rem', margin: '2px 0' }}
               >
-                <Icon size={19} className="nav-icon" />
-                <span>{item.label}</span>
+                <Icon size={18} className="nav-icon" style={{ color: item.color || undefined }} />
+                <span style={{ fontWeight: isActive ? 700 : 500 }}>{item.label}</span>
                 {item.badge !== undefined && item.badge > 0 && (
-                  <span className="nav-badge">{item.badge}</span>
+                  <span className="nav-badge" style={{ background: item.id === 'notifications' ? '#EF4444' : undefined }}>{item.badge}</span>
                 )}
               </button>
             );
           })}
         </nav>
 
-        <div className="sidebar-footer">
-          <button 
-            className="btn btn-secondary" 
-            style={{ width: '100%', fontSize: '0.8rem', padding: '8px 12px' }}
+        <div className="sidebar-footer" style={{ padding: '1rem', marginTop: 'auto', borderTop: '1px solid var(--border-color, #334155)' }}>
+          <button
+            className="btn btn-outline"
             onClick={resetDemo}
-            title="Reset database to rich realistic sample data"
+            style={{ width: '100%', fontSize: '0.8rem', gap: '0.4rem', justifyContent: 'center' }}
+            title="Reset dataset to default SpendWise values"
           >
             <RotateCcw size={14} />
             <span>Reset Demo Data</span>
           </button>
-
-          <div className="user-profile-badge">
-            <div className="user-avatar">
-              {settings.userName ? settings.userName.split(' ').map(n => n[0]).join('') : 'AM'}
-            </div>
-            <div className="user-info">
-              <span className="user-name">{settings.userName || 'Alex Mercer'}</span>
-              <span className="user-plan">
-                <Sparkles size={11} /> Pro Tier
-              </span>
-            </div>
-          </div>
         </div>
       </aside>
     </>

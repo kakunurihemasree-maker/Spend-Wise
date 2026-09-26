@@ -28,6 +28,11 @@ export default function SettingsView() {
   const [userEmail, setUserEmail] = useState(settings.userEmail || 'alex.mercer@spendwise.io');
   const [alertThreshold, setAlertThreshold] = useState(settings.monthBudgetAlertThreshold || 85);
   const [isSaving, setIsSaving] = useState(false);
+  const [dbStatus, setDbStatus] = useState(null);
+
+  React.useEffect(() => {
+    api.getDBStatus().then(st => setDbStatus(st)).catch(() => {});
+  }, []);
 
   const handleSaveProfile = async (e) => {
     e.preventDefault();
@@ -226,8 +231,16 @@ export default function SettingsView() {
               <div style={{ fontWeight: 600, marginTop: 2, color: 'var(--purple)' }}>Node.js 24 + Express 5 REST</div>
             </div>
             <div style={{ padding: 12, borderRadius: 'var(--radius-sm)', background: 'rgba(255, 255, 255, 0.03)' }}>
-              <div style={{ color: 'var(--text-tertiary)', fontSize: '0.72rem', textTransform: 'uppercase' }}>Persistence Layer</div>
-              <div style={{ fontWeight: 600, marginTop: 2, color: 'var(--amber)' }}>Atomic File-Backed JSON Store</div>
+              <div style={{ color: 'var(--text-tertiary)', fontSize: '0.72rem', textTransform: 'uppercase' }}>Database Engine</div>
+              <div style={{ fontWeight: 600, marginTop: 2, color: dbStatus?.connected ? '#10B981' : 'var(--amber)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                <span style={{ width: 8, height: 8, borderRadius: '50%', background: dbStatus?.connected ? '#10B981' : 'var(--amber)', display: 'inline-block', boxShadow: dbStatus?.connected ? '0 0 8px #10B981' : 'none' }}></span>
+                {dbStatus?.connected ? `MongoDB Atlas (${dbStatus.dbName})` : 'Local JSON Store'}
+              </div>
+              {dbStatus?.connected && (
+                <div style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)', marginTop: 4 }}>
+                  Cluster: {dbStatus.cluster}
+                </div>
+              )}
             </div>
           </div>
         </div>

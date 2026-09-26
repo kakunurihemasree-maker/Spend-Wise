@@ -65,7 +65,7 @@ export default function BudgetModal() {
     }
   };
 
-  const palette = ['#6366F1', '#10B981', '#F59E0B', '#EC4899', '#3B82F6', '#8B5CF6', '#14B8A6', '#F43F5E'];
+  const palette = ['#EC4899', '#FACC15', '#A855F7', '#4ADE80', '#10B981', '#38BDF8', '#6366F1', '#FB923C'];
 
   return (
     <div className="modal-overlay" onClick={closeBudgetModal}>
@@ -84,7 +84,7 @@ export default function BudgetModal() {
               id="budget-category-input"
               type="text"
               className="form-input"
-              placeholder="e.g. Dining & Drinks, Streaming Services"
+              placeholder="e.g. Shopping, Gold, EMI, Traveling Expenses"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               required

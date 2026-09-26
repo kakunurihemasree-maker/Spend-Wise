@@ -86,9 +86,10 @@ export default function RecurringModal() {
   const defaultCategories = [
     'Housing & Rent',
     'Utilities & Bills',
-    'Entertainment & Tech',
-    'Health & Fitness',
-    'Shopping & Apparel',
+    'Shopping',
+    'Gold',
+    'EMI',
+    'Traveling',
     'Other'
   ];
 

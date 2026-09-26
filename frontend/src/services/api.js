@@ -3,12 +3,19 @@
 const API_BASE = '/api';
 
 async function request(endpoint, options = {}) {
+  const token = localStorage.getItem('spendwise_token');
+  const headers = {
+    'Content-Type': 'application/json',
+    ...options.headers
+  };
+
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+
   const config = {
-    headers: {
-      'Content-Type': 'application/json',
-      ...options.headers
-    },
-    ...options
+    ...options,
+    headers
   };
 
   const response = await fetch(`${API_BASE}${endpoint}`, config);
@@ -23,7 +30,7 @@ async function request(endpoint, options = {}) {
     throw new Error(errorMsg);
   }
 
-  // Handle blob responses (e.g., CSV/JSON downloads)
+  // Handle blob responses (e.g. CSV export)
   const contentType = response.headers.get('content-type');
   if (contentType && (contentType.includes('text/csv') || contentType.includes('application/octet-stream'))) {
     return response.blob();
@@ -33,11 +40,38 @@ async function request(endpoint, options = {}) {
 }
 
 export const api = {
+  // Auth
+  register: (data) => request('/auth/register', { method: 'POST', body: JSON.stringify(data) }),
+  login: (data) => request('/auth/login', { method: 'POST', body: JSON.stringify(data) }),
+  getMe: () => request('/auth/me'),
+
   // Summary & Insights
-  getSummary: () => request('/analytics/summary'),
+  getSummary: (month) => request(`/analytics/summary${month ? `?month=${month}` : ''}`),
   getSettings: () => request('/analytics/settings'),
   updateSettings: (data) => request('/analytics/settings', { method: 'PUT', body: JSON.stringify(data) }),
   resetDemoData: () => request('/analytics/reset', { method: 'POST' }),
+  getDBStatus: () => request('/db/status'),
+
+  // Salary / Income Management
+  getSalaryRecords: (month) => request(`/salary${month ? `?month=${month}` : ''}`),
+  createSalaryRecord: (data) => request('/salary', { method: 'POST', body: JSON.stringify(data) }),
+  updateSalaryRecord: (id, data) => request(`/salary/${id}`, { method: 'PUT', body: JSON.stringify(data) }),
+  deleteSalaryRecord: (id) => request(`/salary/${id}`, { method: 'DELETE' }),
+
+  // Bank Account Sync
+  syncBankAccounts: () => request('/bank-sync', { method: 'POST' }),
+
+  // Expenditure Alerts & Notifications
+  getNotifications: () => request('/notifications'),
+  markNotificationAsRead: (id) => request(`/notifications/${id}/read`, { method: 'PUT' }),
+  clearNotifications: () => request('/notifications', { method: 'DELETE' }),
+
+  // Monthly Financial Suggestions
+  getMonthlySuggestions: (month) => request(`/suggestions${month ? `?month=${month}` : ''}`),
+
+  // Reports & Exports
+  getReportSummary: (month) => request(`/reports/summary${month ? `?month=${month}` : ''}`),
+  exportReportCSVUrl: (month) => `${API_BASE}/reports/export/csv${month ? `?month=${month}` : ''}`,
 
   // Transactions
   getTransactions: (filters = {}) => {
@@ -48,6 +82,7 @@ export const api = {
     if (filters.accountId && filters.accountId !== 'all') params.append('accountId', filters.accountId);
     if (filters.startDate) params.append('startDate', filters.startDate);
     if (filters.endDate) params.append('endDate', filters.endDate);
+    if (filters.month) params.append('month', filters.month);
     const queryString = params.toString() ? `?${params.toString()}` : '';
     return request(`/transactions${queryString}`);
   },

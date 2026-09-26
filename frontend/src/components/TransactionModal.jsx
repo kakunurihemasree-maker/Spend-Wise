@@ -95,14 +95,14 @@ export default function TransactionModal() {
   };
 
   const defaultCategories = [
+    'Shopping',
+    'Gold',
+    'EMI',
+    'Traveling Expenses',
+    'Traveling',
     'Housing & Rent',
     'Groceries & Food',
-    'Dining & Drinks',
-    'Entertainment & Tech',
-    'Transportation',
     'Utilities & Bills',
-    'Health & Fitness',
-    'Shopping & Apparel',
     'Salary',
     'Freelance',
     'Investments',
